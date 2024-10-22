@@ -22,6 +22,5 @@ public class Exercise7 {
                 System.out.print(list.get(j) + ",");
             }
         }
-
     }
 }
