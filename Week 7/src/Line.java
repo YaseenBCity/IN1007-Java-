@@ -9,9 +9,16 @@ public class Line {
     }
 
     void updateLine(){
-        for (int i = 0; i < this.number.length; i++) {
-            if (number[i] != 0) {
-                this.number[i] += number[i];
+        for (int i = 1; i < this.number.length; i++) {
+            int temp;
+            if (i == 8){
+                break;
+            }
+            if (number[i] == 0) {
+                temp= this.number[i+1];
+                this.number[i+1] = number[i];
+                this.number[i] = temp;
+
             }
         }
     }
