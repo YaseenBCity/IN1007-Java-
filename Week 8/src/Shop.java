@@ -3,42 +3,60 @@ public class Shop {
     private int numberOfArticles;
     private int[] articles;
 
-    Shop(String name, int numberOfArticles, int[] articles) {
-        this.name = name;
-        this.numberOfArticles = numberOfArticles;
-        this.articles = articles;
-    }
     Shop(){
         this.name = "shop open soon";
         this.numberOfArticles = 0;
         this.articles = new int[1];
+        System.out.println("Welcome to the new shop");
     }
+
+    Shop(String name, int numberOfArticles, int[] articles) {
+        this.name = name;
+        this.numberOfArticles = numberOfArticles;
+        this.articles = articles;
+        System.out.println("Welcome to the new shop");
+    }
+
 
 
     public void getName(){
         System.out.println(this.name);
     }
-    public void getNumberOfArticles(){
-        System.out.println(this.numberOfArticles);
+    public int getNumberOfArticles(){
+        return this.numberOfArticles;
     }
-    public void getArticles(){
+    public int[] getArticles(){
         if (this.articles.length <= 1){
-            System.out.println(this.name + " has less than 1 article");
+            return this.articles;
         }else {
-            for (int i = 0; i < this.numberOfArticles; i++) {
-                System.out.println(this.articles[i]);
-            }
+            return this.articles;
+
         }
     }
     void setName(String name){
         this.name = name;
     }
     void setNumberOfArticles(int numberOfArticles){
-        this.numberOfArticles = numberOfArticles;
+        if (numberOfArticles >= 0){
+            this.numberOfArticles = numberOfArticles;
+        }
     }
     void setArticles(int[] articles){
-        this.articles = articles;
+        for (int i = 0; i < this.numberOfArticles; i++) {
+            if (articles[i] >= 0){
+                this.articles[i] = articles[i];
+            }
+        }
     }
+
+    void decrement(int i){
+        if (i >= 0 && i < this.articles.length) {
+            this.articles[i]--;
+        } else {
+            System.out.println("Index out of bounds");
+        }
+    }
+
 
 
 }
