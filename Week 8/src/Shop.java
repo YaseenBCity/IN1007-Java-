@@ -50,13 +50,23 @@ public class Shop {
     }
 
     void decrement(int i){
-        if (i >= 0 && i < this.articles.length) {
-            this.articles[i]--;
-        } else {
-            System.out.println("Index out of bounds");
+        boolean found = false;
+        for (int j = 0; j < this.articles.length; j++) {
+            if (this.articles[j] == i) {
+                // Found the number, shift the remaining elements left
+                for (int k = j; k < this.articles.length - 1; k++) {
+                    this.articles[k] = this.articles[k + 1];
+                }
+                // Set the last element to 0 (or any default value)
+                this.articles[this.articles.length - 1] = 0;
+                found = true;
+                break; // Exit the loop after removing the first occurrence
+            }
+        }
+
+        if (!found) {
+            System.out.println("Number not found in the array");
         }
     }
-
-
 
 }

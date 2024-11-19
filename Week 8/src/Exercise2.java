@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Exercise2 {
     public static void main(String[] args) {
         Shop myShop = new Shop();
@@ -13,6 +15,11 @@ public class Exercise2 {
         boolean result = myMethod(myShop2);
         System.out.println(result);
 
+        int[] myArray2 = {2,1};
+        Buyer myBuyer = new Buyer(myShop2,myArray2);
+
+        myMethod2(myBuyer);
+
     }
     public static boolean myMethod(Shop shop) {
         if (shop.getArticles().length == shop.getNumberOfArticles()) {
@@ -22,9 +29,20 @@ public class Exercise2 {
         }
     }
 
-    public void  myMethod2(Buyer buyer){
+    public static void  myMethod2(Buyer buyer){
+        int[] array = buyer.getArticlesToBuy();
+        System.out.print("The buyer wants to buy: ");
+        System.out.println(Arrays.toString(array));
 
+        System.out.println("The Shop currently has: ");
+        System.out.println(Arrays.toString(buyer.shopGet().getArticles()));
 
+        for (int i = 0; i < array.length; i++) {
+            buyer.shopGet().decrement(array[i]);
+        }
+
+        System.out.println("The shop now has: ");
+        System.out.print(Arrays.toString(buyer.shopGet().getArticles()));
     }
 
 
