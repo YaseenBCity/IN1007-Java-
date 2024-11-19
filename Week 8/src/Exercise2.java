@@ -8,9 +8,9 @@ public class Exercise2 {
 
         myShop.getName();
         myShop2.getName();
-        myShop.getArticles();
-        myShop2.decrement(0);
-        myShop2.getArticles();
+        System.out.println(Arrays.toString(myShop.getArticles()));
+        myShop2.decrement(4);
+        System.out.println(Arrays.toString(myShop2.getArticles()));
 
         boolean result = myMethod(myShop2);
         System.out.println(result);
