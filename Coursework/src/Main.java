@@ -29,7 +29,7 @@ public class Main {
         //Printing the names from each expedition
         System.out.println(pyramidExpedition.getExpeditionLeaderName() + " " + pyramidExpedition.getArchivistName() + " " + pyramidExpedition.getFieldResearcherName());
         System.out.println(nileExpedition.getExpeditionLeaderName() + " " + nileExpedition.getArchivistName() + " " +  nileExpedition.getFieldResearcherName());
-
+        
         if (ExpeditionMember.member_counter == members.length){
             System.out.println("SUCCESS");
         }
