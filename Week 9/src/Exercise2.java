@@ -5,6 +5,7 @@ public class Exercise2 {
         Company myCompany = new Company("mycompany",myarr);
         Employee yaseen = new Employee("Yaseen",manager, myCompany);
         yaseen.addEmployee(yaseen,myarr);
+
         myMethod(myCompany);
     }
     public static void myMethod(Company company) {
