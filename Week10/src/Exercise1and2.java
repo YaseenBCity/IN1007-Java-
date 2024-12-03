@@ -1,10 +1,8 @@
-import java.util.*;
-
-public class Exercise1 {
+public class Exercise1and2 {
     public static void main(String[] args) {
         ChristmasGift myGift1  = new ChristmasGift("money", 500, "abc");
-        ChristmasGift myGift2  = new ChristmasGift("laptop", 800, "abdi");
-        ChristmasGift myGift3  = new ChristmasGift("phone", 5, "osas");
+        ChristmasGift myGift2  = new ChristmasGift("laptop", 800, "def");
+        ChristmasGift myGift3  = new ChristmasGift("phone", 5, "ghi");
 
         MyChristmasList theList = new MyChristmasList();
         theList.addToList(myGift1);
@@ -12,6 +10,19 @@ public class Exercise1 {
         theList.addToList(myGift3);
         printOut(theList);
         System.out.println(mostExpensive(theList));
+
+        //Start of ex2
+        MapToPrice myMap = new MapToPrice();
+        myMap.addGift(myGift1);
+        myMap.addGift(myGift2);
+        myMap.addGift(myGift3);
+        //Testing of containV method
+        if(contntainV(myMap, 800)== true){
+            System.out.println("True");
+        }else{
+            System.out.println("False");
+        }
+        myMap.printNames(100);
 
     }
     public static void printOut(MyChristmasList list) {
@@ -27,5 +38,11 @@ public class Exercise1 {
             }
         }
         return mostExpensive;
+    }
+    public static boolean contntainV(MapToPrice m, int i) {
+        if(m.getTheMap().containsValue(i)){
+            return true;
+        }
+        return false;
     }
 }
