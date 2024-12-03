@@ -18,9 +18,10 @@ public class MapToPrice {
     }
 
     public void printNames(int i) {
+        System.out.println("Gifts over "+ i);
         for (ChristmasGift gift : theMap.keySet()) {
             if(theMap.get(gift) > i) {
-                System.out.println(gift.getName());
+                System.out.println("Gift:" +gift.getName());
             }
         }
     }
